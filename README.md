@@ -98,6 +98,8 @@ Para facilitar a execução do projeto, algumas informações como usuário e se
 - **Melhoria na Segurança:** Implementar políticas de segurança mais robustas, como a rotação de chaves e a utilização de HTTPS.
 - **Testes de Integração:** Adicionar testes de integração para garantir que todos os componentes do sistema funcionem corretamente juntos.
 - **Melhoria na UI:** Melhorar a interface do usuário do frontend para uma melhor experiência do usuário.
+- **Melhoria na arquitetura:** Pode ser integrado o padrão de CQRS e commands para apartar as lógicas e dominios, mmelhorar a performance e escalabilidade da API.
+    
 
   
   
