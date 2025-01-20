@@ -1,0 +1,38 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Nova Tarefa</h2>
+  <form [formGroup]="tarefaForm" (ngSubmit)="onSubmit()">
+    <div class="form-group mb-3">
+      <label for="titulo">Título</label>
+      <input id="titulo" class="form-control" formControlName="titulo">
+      <div *ngIf="tarefaForm.get('titulo')?.invalid && (tarefaForm.get('titulo')?.dirty || tarefaForm.get('titulo')?.touched)" class="text-danger">
+        <div *ngIf="tarefaForm.get('titulo')?.errors?.['required']">Título é obrigatório.</div>
+        <div *ngIf="tarefaForm.get('titulo')?.errors?.['minlength']">Título deve ter no mínimo 3 caracteres.</div>
+        <div *ngIf="tarefaForm.get('titulo')?.errors?.['maxlength']">Título deve ter no máximo 100 caracteres.</div>
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <label for="descricao">Descrição</label>
+      <input id="descricao" class="form-control" formControlName="descricao">
+    </div>
+    <div class="form-group mb-3">
+      <label for="dataVencimento">Data de Vencimento</label>
+      <input id="dataVencimento" type="date" class="form-control" formControlName="dataVencimento">
+      <div *ngIf="tarefaForm.get('dataVencimento')?.invalid && (tarefaForm.get('dataVencimento')?.dirty || tarefaForm.get('dataVencimento')?.touched)" class="text-danger">
+        <div *ngIf="tarefaForm.get('dataVencimento')?.errors?.['required']">Data de vencimento é obrigatória.</div>
+        <div *ngIf="tarefaForm.get('dataVencimento')?.errors?.['dataVencimentoInvalida']">Data de vencimento não pode ser anterior à data atual.</div>
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <label for="status">Status</label>
+      <select id="status" class="form-control" formControlName="status">
+        <option value="Pendente">Pendente</option>
+        <option value="Em andamento">Em andamento</option>
+        <option value="Concluído">Concluído</option>
+      </select>
+      <div *ngIf="tarefaForm.get('status')?.invalid && (tarefaForm.get('status')?.dirty || tarefaForm.get('status')?.touched)" class="text-danger">
+        <div *ngIf="tarefaForm.get('status')?.errors?.['required']">Status é obrigatório.</div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!tarefaForm.valid">Salvar</button>
+  </form>
+</div>

@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Lista de Tarefas</h2>
+  <div class="form-group mb-3">
+    <label for="status">Filtrar por Status:</label>
+    <select id="status" class="form-control" [(ngModel)]="selectedStatus" (change)="onStatusChange()">
+      <option value="Pendente">Pendente</option>
+      <option value="Em andamento">Em andamento</option>
+      <option value="Concluído">Concluído</option>
+    </select>
+  </div>
+  <div class="form-group mb-3">
+    <label for="ordenarPor">Ordenar por:</label>
+    <select id="ordenarPor" class="form-control" [(ngModel)]="ordenarPor" (change)="onOrdenarPorChange()">
+      <option value="dataVencimento">Data de Vencimento</option>
+      <option value="titulo">Título</option>
+    </select>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let tarefa of tarefas">
+      <div>
+        <strong>ID:</strong> {{ tarefa.id }}<br>
+        <strong>Título:</strong> {{ tarefa.titulo }}<br>
+        <strong>Descrição:</strong> {{ tarefa.descricao }}<br>
+        <strong>Data de Vencimento:</strong> {{ tarefa.dataVencimento | date:'shortDate' }}<br>
+        <strong>Status:</strong> {{ tarefa.status }}
+      </div>
+      <button class="btn btn-danger" (click)="onDelete(tarefa.id)">Excluir</button>
+    </li>
+  </ul>
+</div>

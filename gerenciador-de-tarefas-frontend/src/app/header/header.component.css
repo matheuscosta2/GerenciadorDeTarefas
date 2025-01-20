@@ -1,0 +1,12 @@
+.navbar {
+  margin-bottom: 20px;
+}
+
+.navbar-header {
+  flex: 1;
+  text-align: center;
+}
+
+.d-flex {
+  align-items: center;
+}

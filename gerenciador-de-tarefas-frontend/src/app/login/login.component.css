@@ -1,0 +1,23 @@
+.login-container {
+  display: flex;
+  align-items: center;
+}
+
+.logged-in-container {
+  display: flex;
+  align-items: center;
+}
+
+.form-group {
+  margin-right: 10px;
+}
+
+.btn-link {
+  margin-left: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+  .btn-link:hover {
+    text-decoration: underline;
+  }
