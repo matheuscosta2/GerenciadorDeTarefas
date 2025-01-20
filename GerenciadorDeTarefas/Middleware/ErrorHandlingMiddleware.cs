@@ -34,7 +34,7 @@ public class MiddlewareTratamentoErros
             ArgumentException => (int)HttpStatusCode.BadRequest,
             InvalidOperationException => (int)HttpStatusCode.Conflict,
             _ => (int)HttpStatusCode.InternalServerError
-        };cc
+        };
 
         var response = new
         {
